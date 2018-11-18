@@ -4,3 +4,7 @@ EPandit.Api/obj/Debug/
 EPandit.Repository/bin/
 EPandit.Repository/obj/Debug/
 packages/
+EPandit.Shared/bin/
+EPandit.Shared/obj/Debug/
+EPandit.Service/obj/Debug/
+EPandit.Service/bin/

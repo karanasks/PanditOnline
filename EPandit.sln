@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPandit.Api", "EPandit.Api\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPandit.Repository", "EPandit.Repository\EPandit.Repository.csproj", "{BA7CE6C2-7D0A-4B2A-B30E-7B58ED6D6399}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPandit.Shared", "EPandit.Shared\EPandit.Shared.csproj", "{46AFEBDF-4247-4445-85F6-F1B29D2E418E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EPandit.Service", "EPandit.Service\EPandit.Service.csproj", "{EB8C0F07-A6D5-4CDF-9686-C32FB6B22D39}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{BA7CE6C2-7D0A-4B2A-B30E-7B58ED6D6399}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BA7CE6C2-7D0A-4B2A-B30E-7B58ED6D6399}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BA7CE6C2-7D0A-4B2A-B30E-7B58ED6D6399}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46AFEBDF-4247-4445-85F6-F1B29D2E418E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46AFEBDF-4247-4445-85F6-F1B29D2E418E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46AFEBDF-4247-4445-85F6-F1B29D2E418E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46AFEBDF-4247-4445-85F6-F1B29D2E418E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB8C0F07-A6D5-4CDF-9686-C32FB6B22D39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB8C0F07-A6D5-4CDF-9686-C32FB6B22D39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB8C0F07-A6D5-4CDF-9686-C32FB6B22D39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB8C0F07-A6D5-4CDF-9686-C32FB6B22D39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

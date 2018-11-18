@@ -146,6 +146,14 @@
       <DependentUpon>EPandit.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\MeasurementUnitMasterRepository.cs" />
+    <Compile Include="Repositories\PanditDetailRepository.cs" />
+    <Compile Include="Repositories\PanditPoojaMappingRepository.cs" />
+    <Compile Include="Repositories\PoojaMasterRepository.cs" />
+    <Compile Include="Repositories\PoojaSamagriMappingRepository.cs" />
+    <Compile Include="Repositories\SamagriMasterRepository.cs" />
+    <Compile Include="Repositories\UserMasterRepository.cs" />
+    <Compile Include="Repositories\UserRoleRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

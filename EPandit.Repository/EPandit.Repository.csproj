@@ -76,6 +76,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="DataModel\DatabaseScripts\Script v1.0.sql" />
     <Content Include="packages.config" />
     <EntityDeploy Include="DataModel\EPandit.edmx">
       <Generator>EntityModelCodeGenerator</Generator>

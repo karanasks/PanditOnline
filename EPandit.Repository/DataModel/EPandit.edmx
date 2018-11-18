@@ -1,0 +1,445 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="EPanditModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="MeasurementUnitMaster">
+          <Key>
+            <PropertyRef Name="MeasurementUnitMasterId" />
+          </Key>
+          <Property Name="MeasurementUnitMasterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MeasurementUnit" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PanditDetail">
+          <Key>
+            <PropertyRef Name="PanditDetailId" />
+          </Key>
+          <Property Name="PanditDetailId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserMasterId" Type="bigint" Nullable="false" />
+          <Property Name="YearsOfExperience" Type="float" />
+          <Property Name="PanditDescription" Type="nvarchar" MaxLength="800" />
+          <Property Name="OrganisationName" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PanditPoojaMapping">
+          <Key>
+            <PropertyRef Name="PanditPoojaMappingId" />
+          </Key>
+          <Property Name="PanditPoojaMappingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserMasterId" Type="bigint" Nullable="false" />
+          <Property Name="PoojaMasterId" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PoojaMaster">
+          <Key>
+            <PropertyRef Name="PoojaMasterId" />
+          </Key>
+          <Property Name="PoojaMasterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PoojaName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="PoojaDescription" Type="nvarchar" MaxLength="800" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="PoojaSamagriMapping">
+          <Key>
+            <PropertyRef Name="PoojaSamagriMappingId" />
+          </Key>
+          <Property Name="PoojaSamagriMappingId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PoojaMasterId" Type="int" Nullable="false" />
+          <Property Name="SamagriMasterId" Type="int" Nullable="false" />
+          <Property Name="Quantity" Type="float" Nullable="false" />
+          <Property Name="MeasurementUnitMasterId" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="SamagriMaster">
+          <Key>
+            <PropertyRef Name="SamagriMasterId" />
+          </Key>
+          <Property Name="SamagriMasterId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SamagriName" Type="nvarchar" MaxLength="200" Nullable="false" />
+          <Property Name="SamagriDescription" Type="nvarchar" MaxLength="800" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserMaster">
+          <Key>
+            <PropertyRef Name="UserMasterId" />
+          </Key>
+          <Property Name="UserMasterId" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UserRoleId" Type="int" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="LoginId" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="MobileNumber" Type="bigint" Nullable="false" />
+          <Property Name="WhatsappMobileNumber" Type="bigint" />
+          <Property Name="AlternateMobileNumber1" Type="bigint" />
+          <Property Name="AlternateMobileNumber2" Type="bigint" />
+          <Property Name="AlternateMobileNumber3" Type="bigint" />
+          <Property Name="UserAddress" Type="nvarchar" MaxLength="800" Nullable="false" />
+          <Property Name="HomeLongitude" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="HomeLatitude" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="DateOfBirth" Type="datetime" />
+          <Property Name="UserPassword" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="UserImage" Type="varchar(max)" />
+          <Property Name="UserCity" Type="nvarchar" MaxLength="100" />
+          <Property Name="UserState" Type="nvarchar" MaxLength="100" />
+          <Property Name="PinCode" Type="int" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RoleName" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="CreatedBy" Type="bigint" />
+          <Property Name="CreatedDate" Type="datetime" />
+          <Property Name="ModifiedBy" Type="bigint" />
+          <Property Name="ModifiedDate" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_RoleUser">
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="1" />
+          <End Role="UserMaster" Type="Self.UserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleId" />
+            </Principal>
+            <Dependent Role="UserMaster">
+              <PropertyRef Name="UserRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EPanditModelStoreContainer">
+          <EntitySet Name="MeasurementUnitMaster" EntityType="Self.MeasurementUnitMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PanditDetail" EntityType="Self.PanditDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PanditPoojaMapping" EntityType="Self.PanditPoojaMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PoojaMaster" EntityType="Self.PoojaMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PoojaSamagriMapping" EntityType="Self.PoojaSamagriMapping" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SamagriMaster" EntityType="Self.SamagriMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserMaster" EntityType="Self.UserMaster" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_RoleUser" Association="Self.FK_RoleUser">
+            <End Role="UserRole" EntitySet="UserRole" />
+            <End Role="UserMaster" EntitySet="UserMaster" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="EPanditModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="MeasurementUnitMaster">
+          <Key>
+            <PropertyRef Name="MeasurementUnitMasterId" />
+          </Key>
+          <Property Name="MeasurementUnitMasterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MeasurementUnit" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PanditDetail">
+          <Key>
+            <PropertyRef Name="PanditDetailId" />
+          </Key>
+          <Property Name="PanditDetailId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserMasterId" Type="Int64" Nullable="false" />
+          <Property Name="YearsOfExperience" Type="Double" />
+          <Property Name="PanditDescription" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+          <Property Name="OrganisationName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PanditPoojaMapping">
+          <Key>
+            <PropertyRef Name="PanditPoojaMappingId" />
+          </Key>
+          <Property Name="PanditPoojaMappingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserMasterId" Type="Int64" Nullable="false" />
+          <Property Name="PoojaMasterId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PoojaMaster">
+          <Key>
+            <PropertyRef Name="PoojaMasterId" />
+          </Key>
+          <Property Name="PoojaMasterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PoojaName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PoojaDescription" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="PoojaSamagriMapping">
+          <Key>
+            <PropertyRef Name="PoojaSamagriMappingId" />
+          </Key>
+          <Property Name="PoojaSamagriMappingId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PoojaMasterId" Type="Int32" Nullable="false" />
+          <Property Name="SamagriMasterId" Type="Int32" Nullable="false" />
+          <Property Name="Quantity" Type="Double" Nullable="false" />
+          <Property Name="MeasurementUnitMasterId" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="SamagriMaster">
+          <Key>
+            <PropertyRef Name="SamagriMasterId" />
+          </Key>
+          <Property Name="SamagriMasterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SamagriName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="SamagriDescription" Type="String" MaxLength="800" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="UserMaster">
+          <Key>
+            <PropertyRef Name="UserMasterId" />
+          </Key>
+          <Property Name="UserMasterId" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UserRoleId" Type="Int32" Nullable="false" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="LoginId" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="MobileNumber" Type="Int64" Nullable="false" />
+          <Property Name="WhatsappMobileNumber" Type="Int64" />
+          <Property Name="AlternateMobileNumber1" Type="Int64" />
+          <Property Name="AlternateMobileNumber2" Type="Int64" />
+          <Property Name="AlternateMobileNumber3" Type="Int64" />
+          <Property Name="UserAddress" Type="String" MaxLength="800" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="HomeLongitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="HomeLatitude" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DateOfBirth" Type="DateTime" Precision="3" />
+          <Property Name="UserPassword" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="UserImage" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="UserCity" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="UserState" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="PinCode" Type="Int32" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="UserRole" Relationship="Self.FK_RoleUser" FromRole="UserMaster" ToRole="UserRole" />
+        </EntityType>
+        <EntityType Name="UserRole">
+          <Key>
+            <PropertyRef Name="UserRoleId" />
+          </Key>
+          <Property Name="UserRoleId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RoleName" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="CreatedBy" Type="Int64" />
+          <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+          <Property Name="ModifiedBy" Type="Int64" />
+          <Property Name="ModifiedDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="UserMasters" Relationship="Self.FK_RoleUser" FromRole="UserRole" ToRole="UserMaster" />
+        </EntityType>
+        <Association Name="FK_RoleUser">
+          <End Role="UserRole" Type="Self.UserRole" Multiplicity="1" />
+          <End Role="UserMaster" Type="Self.UserMaster" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="UserRole">
+              <PropertyRef Name="UserRoleId" />
+            </Principal>
+            <Dependent Role="UserMaster">
+              <PropertyRef Name="UserRoleId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="EPanditEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="MeasurementUnitMasters" EntityType="Self.MeasurementUnitMaster" />
+          <EntitySet Name="PanditDetails" EntityType="Self.PanditDetail" />
+          <EntitySet Name="PanditPoojaMappings" EntityType="Self.PanditPoojaMapping" />
+          <EntitySet Name="PoojaMasters" EntityType="Self.PoojaMaster" />
+          <EntitySet Name="PoojaSamagriMappings" EntityType="Self.PoojaSamagriMapping" />
+          <EntitySet Name="SamagriMasters" EntityType="Self.SamagriMaster" />
+          <EntitySet Name="UserMasters" EntityType="Self.UserMaster" />
+          <EntitySet Name="UserRoles" EntityType="Self.UserRole" />
+          <AssociationSet Name="FK_RoleUser" Association="Self.FK_RoleUser">
+            <End Role="UserRole" EntitySet="UserRoles" />
+            <End Role="UserMaster" EntitySet="UserMasters" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="EPanditModelStoreContainer" CdmEntityContainer="EPanditEntities">
+          <EntitySetMapping Name="MeasurementUnitMasters">
+            <EntityTypeMapping TypeName="EPanditModel.MeasurementUnitMaster">
+              <MappingFragment StoreEntitySet="MeasurementUnitMaster">
+                <ScalarProperty Name="MeasurementUnitMasterId" ColumnName="MeasurementUnitMasterId" />
+                <ScalarProperty Name="MeasurementUnit" ColumnName="MeasurementUnit" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PanditDetails">
+            <EntityTypeMapping TypeName="EPanditModel.PanditDetail">
+              <MappingFragment StoreEntitySet="PanditDetail">
+                <ScalarProperty Name="PanditDetailId" ColumnName="PanditDetailId" />
+                <ScalarProperty Name="UserMasterId" ColumnName="UserMasterId" />
+                <ScalarProperty Name="YearsOfExperience" ColumnName="YearsOfExperience" />
+                <ScalarProperty Name="PanditDescription" ColumnName="PanditDescription" />
+                <ScalarProperty Name="OrganisationName" ColumnName="OrganisationName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PanditPoojaMappings">
+            <EntityTypeMapping TypeName="EPanditModel.PanditPoojaMapping">
+              <MappingFragment StoreEntitySet="PanditPoojaMapping">
+                <ScalarProperty Name="PanditPoojaMappingId" ColumnName="PanditPoojaMappingId" />
+                <ScalarProperty Name="UserMasterId" ColumnName="UserMasterId" />
+                <ScalarProperty Name="PoojaMasterId" ColumnName="PoojaMasterId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PoojaMasters">
+            <EntityTypeMapping TypeName="EPanditModel.PoojaMaster">
+              <MappingFragment StoreEntitySet="PoojaMaster">
+                <ScalarProperty Name="PoojaMasterId" ColumnName="PoojaMasterId" />
+                <ScalarProperty Name="PoojaName" ColumnName="PoojaName" />
+                <ScalarProperty Name="PoojaDescription" ColumnName="PoojaDescription" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PoojaSamagriMappings">
+            <EntityTypeMapping TypeName="EPanditModel.PoojaSamagriMapping">
+              <MappingFragment StoreEntitySet="PoojaSamagriMapping">
+                <ScalarProperty Name="PoojaSamagriMappingId" ColumnName="PoojaSamagriMappingId" />
+                <ScalarProperty Name="PoojaMasterId" ColumnName="PoojaMasterId" />
+                <ScalarProperty Name="SamagriMasterId" ColumnName="SamagriMasterId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="MeasurementUnitMasterId" ColumnName="MeasurementUnitMasterId" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SamagriMasters">
+            <EntityTypeMapping TypeName="EPanditModel.SamagriMaster">
+              <MappingFragment StoreEntitySet="SamagriMaster">
+                <ScalarProperty Name="SamagriMasterId" ColumnName="SamagriMasterId" />
+                <ScalarProperty Name="SamagriName" ColumnName="SamagriName" />
+                <ScalarProperty Name="SamagriDescription" ColumnName="SamagriDescription" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserMasters">
+            <EntityTypeMapping TypeName="EPanditModel.UserMaster">
+              <MappingFragment StoreEntitySet="UserMaster">
+                <ScalarProperty Name="UserMasterId" ColumnName="UserMasterId" />
+                <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="LoginId" ColumnName="LoginId" />
+                <ScalarProperty Name="MobileNumber" ColumnName="MobileNumber" />
+                <ScalarProperty Name="WhatsappMobileNumber" ColumnName="WhatsappMobileNumber" />
+                <ScalarProperty Name="AlternateMobileNumber1" ColumnName="AlternateMobileNumber1" />
+                <ScalarProperty Name="AlternateMobileNumber2" ColumnName="AlternateMobileNumber2" />
+                <ScalarProperty Name="AlternateMobileNumber3" ColumnName="AlternateMobileNumber3" />
+                <ScalarProperty Name="UserAddress" ColumnName="UserAddress" />
+                <ScalarProperty Name="HomeLongitude" ColumnName="HomeLongitude" />
+                <ScalarProperty Name="HomeLatitude" ColumnName="HomeLatitude" />
+                <ScalarProperty Name="DateOfBirth" ColumnName="DateOfBirth" />
+                <ScalarProperty Name="UserPassword" ColumnName="UserPassword" />
+                <ScalarProperty Name="UserImage" ColumnName="UserImage" />
+                <ScalarProperty Name="UserCity" ColumnName="UserCity" />
+                <ScalarProperty Name="UserState" ColumnName="UserState" />
+                <ScalarProperty Name="PinCode" ColumnName="PinCode" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UserRoles">
+            <EntityTypeMapping TypeName="EPanditModel.UserRole">
+              <MappingFragment StoreEntitySet="UserRole">
+                <ScalarProperty Name="UserRoleId" ColumnName="UserRoleId" />
+                <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="ModifiedDate" ColumnName="ModifiedDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -78,6 +78,15 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\MeasurementUnitMasterModel.cs" />
+    <Compile Include="Models\ModelBase.cs" />
+    <Compile Include="Models\PanditDetailModel.cs" />
+    <Compile Include="Models\PanditPoojaMappingModel.cs" />
+    <Compile Include="Models\PoojaMasterModel.cs" />
+    <Compile Include="Models\PoojaSamagriMappingModel.cs" />
+    <Compile Include="Models\SamagriMasterModel.cs" />
+    <Compile Include="Models\UserMasterModel.cs" />
+    <Compile Include="Models\UserRoleModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <PropertyGroup>

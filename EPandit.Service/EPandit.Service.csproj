@@ -79,6 +79,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\MeasurementUnitMasterService.cs" />
+    <Compile Include="Services\PanditDetailService.cs" />
+    <Compile Include="Services\PanditPoojaMappingService.cs" />
+    <Compile Include="Services\PoojaMasterService.cs" />
+    <Compile Include="Services\PoojaSamagriMappingService.cs" />
+    <Compile Include="Services\SamagriMasterService.cs" />
+    <Compile Include="Services\UserMasterService.cs" />
+    <Compile Include="Services\UserRoleService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EPandit.Repository\EPandit.Repository.csproj">
+      <Project>{ba7ce6c2-7d0a-4b2a-b30e-7b58ed6d6399}</Project>
+      <Name>EPandit.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EPandit.Shared\EPandit.Shared.csproj">
+      <Project>{46afebdf-4247-4445-85f6-f1b29d2e418e}</Project>
+      <Name>EPandit.Shared</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
